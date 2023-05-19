@@ -1,0 +1,35 @@
+<h1 class="alert alert-danger">HOLA CURSO {{nombreCurso}}</h1>
+<section class="container">
+  <aside class="row">
+    <h1 class="alert alert-warning">Esto es un DATA BINDING tipo <strong>EVENT BINDING</strong></h1>
+    <p>Texto = {{ txt }}</p>
+    <div class="container">
+<!--       <button class="btn btn-sm btn-outline-success" [(ngModel)]="sumarUno({num})">+1</button>
+      <button class="btn btn-sm btn-outline-danger" [(ngModel)]="restarUno({num})">-1</button>-->    
+      <button class="btn btn-outline-dark" (click)="cambiarTexto()">EventBinding: CLICK</button>
+    </div>
+  </aside>
+  <br><br><br>  
+  <aside class="row">
+    <h1 class="alert alert-success">Esto es un DATA BINDING tipo <strong>TWO WAY DATA BINDING </strong></h1>
+    <p>{{ texto }}</p>
+    <p>{{num}}</p>
+    <div class="container">
+      <button class="btn btn-sm btn-outline-success" ngDefaultControl name="modif1" [(ngModel)]="num" (click)="sumarUno()">+1</button>
+      <button class="btn btn-sm btn-outline-danger" ngDefaultControl name="modif2" [(ngModel)]="num" (click)="sumarUno()">-1</button>
+      <input type="text" class="form-control" name="txt" placeholder="Escribe algo aqui" [(ngModel)]="texto">
+    </div>
+  </aside>
+  <br><br><br>
+  <aside class="row">
+    <h1 class="alert alert-success">Esto es un DATA BINDING tipo <strong>INTERPOLACION</strong> de función (suma)</h1>
+      <p>El resultado de 4 + 12 es = {{ getSuma(4,12) }}</p>
+  </aside>
+  <br>  <br>  <br>
+  <aside class="row">
+    <h1 class="alert alert-primary">Esto es un DATA BINDING tipo <strong>PROPERTY BINDING</strong></h1>
+    <input type="text" name="propertybinding" id="" [placeholder]="txtPH" [disabled]="deshab">
+    <img [src]="imgSrc" alt="imgPB" [class]="display" width="400px" height="400px">
+  </aside>
+</section>
+

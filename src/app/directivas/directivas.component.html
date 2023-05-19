@@ -1,0 +1,53 @@
+<h1 class="alert alert-danger">DIRECTIVAS</h1>
+<section class="container">
+  <aside class="row">
+    <h1 class="alert alert-warning">Esto es una DIRECTIVA tipo <strong>*NgFor</strong></h1>
+    <h3>Listado de estudiantes</h3>
+    <br>
+    <div cass="container">
+      <table class="table table-bordered table-dark table-hover " *ngIf="show">
+        <thead scope="col">
+          <tr>
+              <th >N°</th>
+              <th >Name</th>
+              <th >State ngStyle</th>
+              <th >State ngClass</th>
+              <th >State ngSwitch</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr scope="row" *ngFor="let std of studentList; let i = index" [ngSwitch]="std.state">  
+            <td>{{i+1}}</td>
+            <td>{{std.name}}</td>
+            <td [ngStyle]="{'background-color': std.state === 'Aproved' ? 'green' : 'red'}">{{std.state}}</td>
+            <td >
+              <span [ngClass]="std.state === 'Aproved' ? 'badge bg-success' : 'badge bg-danger'"> 
+                {{std.state}}
+              </span>
+            </td>
+            <td >
+              <span *ngSwitchCase="'Aproved'" class="badge bg-success"> 
+                {{std.state}}
+              </span>
+              <span *ngSwitchCase="'Rejected'" class="badge bg-warning"> 
+                {{std.state}}
+              </span>
+              <span *ngSwitchCase="'Expelled'" class="badge bg-danger"> 
+                {{std.state}}
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </aside>
+  <br><br><br>
+  <aside class="row">
+    <h1 class="alert alert-warning">Esto es una DIRECTIVA tipo <strong>*NgIF</strong></h1>
+    <button class="btn btn-dark ml-auto" (click)="toggle()" >{{btnTitle}}</button>
+    <br>
+    <div cass="container">
+    </div>
+  </aside>
+  <br><br><br>  
+</section>

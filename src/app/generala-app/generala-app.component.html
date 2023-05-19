@@ -1,0 +1,31 @@
+<div class="container ">
+    <div class="card px-4 py-4">
+        <div class="container text-center " >
+            <ul class="list-group list-group-horizontal" >
+                <li class="list-group-item" *ngFor="let dice of dices; index as i" [ngSwitch]="dice.i+1">
+                    <img  *ngSwitchCase="1" class="img px-3 py-3" src="{{dice.imgSrc}}" alt="" (click)="selectedDice()">
+                    <img  *ngSwitchCase="2" class="img px-3 py-3" src="{{dice.imgSrc}}" alt="" (click)="selectedDice()">
+                    <img  *ngSwitchCase="3" class="img px-3 py-3" src="{{dice.imgSrc}}" alt="" (click)="selectedDice()">
+                    <img  *ngSwitchCase="4" class="img px-3 py-3" src="{{dice.imgSrc}}" alt="" (click)="selectedDice()">
+                    <img  *ngSwitchCase="5" class="img px-3 py-3" src="{{dice.imgSrc}}" alt="" (click)="selectedDice()">
+                </li>
+            </ul>
+            
+        </div>
+        <h1><span class="badge badge-success">{{playMsg}}</span></h1>
+        <div class="container mt-4 text-center">
+            <button class="btn btn-sm btn-outline-dark" (click)="rollDices()">
+                Roll dices
+            </button>
+
+        </div>
+    </div>
+</div>
+<!--[ngClass]="selectedDices === true ? 'img-thumbnail' : 'rounded'"
+[ngClass]="selectedDices === true ? 'img-thumbnail' : 'rounded'"
+[ngClass]="selectedDices === true ? 'img-thumbnail' : 'rounded'"
+[ngClass]="selectedDices === true ? 'img-thumbnail' : 'rounded'"
+[ngClass]="selectedDices === true ? 'img-thumbnail' : 'rounded'"
+
+
+-->
